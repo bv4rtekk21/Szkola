@@ -1,26 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Strona dla pomysłów</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div>
-    <form>
-      <div class="container">
-      <div class="dedykacja">Dedykacja</div>
-        <form action="mail.php" method="post">
-      <div><input type="text" placeholder="Od kogo" class="text" name="od" required></div>
-      <div><input type="text" placeholder="Dla kogo" class="text" name="dla" required></div>
-      <div><input type="text" placeholder="Piosenka" class="text" name="piosenka" required></div>
-      <div><button type="submit" class="przycisk">Potwierdź</div>
-      </div>
-      </form>
-
-
- <p class="msg-status "></p>
-
-
-
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularz kontaktowy</title>
+        <!-- CSS Bootstrapa -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-6 offset-md-3">
+        
+                    <h3 class="my-5">Formularz kontaktowy</h3>
+        
+                    <?php if ($errorMessage) : ?>
+                        <div class="alert alert-danger"><?php echo $errorMessage; ?></div>
+                    <?php endif; ?>
+        
+                    <?php if ($successMessage) : ?>
+                        <div class="alert alert-success"><?php echo $successMessage; ?></div>
+                    <?php endif; ?>
+        
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Imię</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Adres e-mail</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Treść wiadomości</label>
+                            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                        </div>
+        
+                        <div class="mb-3">
+                            <input class="btn btn-primary" type="submit" value="Wyślij formularz">
+                        </div>
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+    
+    </body>
+    </html>
